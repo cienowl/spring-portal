@@ -13,22 +13,22 @@ public class WebMainController {
 
     @GetMapping("/intro")
     public String viewIntro() {
-        return "intro";
+        return "intro/intro";
     }
 
     @GetMapping("/tennis")
     public String viewTennis() {
-        return "tennis";
+        return "tennis/tennis";
     }
 
     @GetMapping("/badminton")
     public String viewBadminton() {
-        return "badminton";
+        return "badminton/badminton";
     }
 
     @GetMapping("/squash")
     public String viewSquash() {
-        return "squash";
+        return "squash/squash";
     }
 
 }

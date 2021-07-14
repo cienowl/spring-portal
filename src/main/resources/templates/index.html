@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8"/>
@@ -14,40 +14,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">String Portal</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">홈</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/intro">소개</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/badminton">배드민턴</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/tennis">테니스</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/squash">스쿼시</a>
-        </li>
-        <!--                    <li class="nav-item">-->
-        <!--                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
-        <!--                    </li>-->
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+<nav th:replace="/common/navbar.html :: navbar"></nav>
 
 <main>
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -103,20 +70,21 @@
 
   <div class="container bg-light p-5 rounded">
     <h1>인덱스 페이지</h1>
-    <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
+    <p class="lead">메인페이지.</p>
     <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
   </div>
 
 </main>
 
-<footer class="container">
-  <p class="float-end"><a href="#">Back to top</a></p>
-  <p>&copy; 2021–2021 Copyright. Hojoon Lee &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-</footer>
+<footer th:replace="/common/footer.html :: footer"></footer>
 
 <script src="/static/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+<script>
+  let navTabActive = document.getElementById("toHome");
+  navTabActive.className += ' active';
+</script>
 </body>
 </html>
