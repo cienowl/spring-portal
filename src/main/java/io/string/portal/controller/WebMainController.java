@@ -31,4 +31,9 @@ public class WebMainController {
         return "squash/squash";
     }
 
+    @GetMapping("/racketball")
+    public String viewRacketball() {
+        return "racketball/racketball";
+    }
+
 }
