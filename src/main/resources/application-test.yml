@@ -4,12 +4,12 @@ server:
 spring:
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: ${test-db-url}
-    username: ${test-db-username}
-    password: ${test-db-password}
+    url: jdbc:mariadb://localhost:3306/string_portal
+    username: root
+    password: mariadb
   jpa:
     open-in-view: false
     generate-ddl: true
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
