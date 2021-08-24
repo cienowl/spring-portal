@@ -36,6 +36,8 @@ out/
 ### VS Code ###
 .vscode/
 
+### Querydsl
+generated
 
 # Created by https://www.toptal.com/developers/gitignore/api/intellij,eclipse,java-web,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij,eclipse,java-web,macos
