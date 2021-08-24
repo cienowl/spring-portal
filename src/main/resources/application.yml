@@ -1,8 +1,47 @@
+server:
+  port: 80
+  error:
+    include-exception: true
+    include-stacktrace: always
+
 spring:
   profiles:
     active: dev
+  application:
+    name: spring-portal
   mvc:
     static-path-pattern: /static/**
+    throw-exception-if-no-handler-found: true
+    dispatch-options-request: false
   devtools:
     livereload:
       enabled: true
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: false
+    properties:
+      org:
+        hibernate:
+          envers:
+            audit_table_suffix: _history
+            revision_field_name: rev
+            store_data_at_delete: true
+    hibernate:
+      use-new-id-generator-mappings: false
+
+springdoc:
+  swagger-ui:
+    path: /swagger
+    operations-sorter: alpha
+    tags-sorter: alpha
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always

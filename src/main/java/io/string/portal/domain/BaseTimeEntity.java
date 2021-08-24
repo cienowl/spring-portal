@@ -14,13 +14,13 @@ import java.util.Date;
 public abstract class BaseTimeEntity {
 
     @CreatedDate
-    @Column(name = "create_at")
+    @Column(name = "create_datetime")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createAt;
+    private Date createDateTime;
 
     @LastModifiedDate
-    @Column(name = "update_at")
+    @Column(name = "update_datetime")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updateAt;
+    private Date updateDateTime;
 
 }
